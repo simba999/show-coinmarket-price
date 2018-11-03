@@ -31,7 +31,6 @@ class History extends Component {
 
 	restoreStateFromLocalStorage = () => {
 		const state = JSON.parse(localStorage.getItem('today-state'));
-		console.log(state);
 		this.setState(state);
 	};
 
@@ -89,7 +88,6 @@ class History extends Component {
 		 * version of it ! :-)
 		 */
 		const {todayprice, yesterdayprice, twodaysprice, threedaysprice, fourdaysprice} = this.state;
-		console.log(this.state);
     	return (
             <div className="history--section container">
                 <h2>History (Past 5 days)</h2>
