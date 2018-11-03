@@ -31,10 +31,7 @@ app.use((req, res, next) => {
 
 app.set('port', (5000))
 
-app.get('/', (req, res) => {
-    res.send('Welcome')
-})
-
+app.use('/', express.static(path.join(__dirname, 'build')));
 app.post('/prices/new', (req, res) => {
     pusher.trigger( 'coin-prices-development', 'prices', {
         prices: req.body.prices

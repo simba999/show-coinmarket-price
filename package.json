@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start:client": "react-scripts start",
-    "start:server": "nodemon server.js",
+    "start:server": "node server.js",
     "start": "npm-run-all --parallel start:*",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
