@@ -19,8 +19,8 @@ class Today extends Component {
 		axios.post('/prices/new', {
 			prices: data
 		})
-			.then(console.log)
-			.catch(console.error) // if you do (x => yourFunc(x)) you can replace it with (yourFunc)
+			.then(() => {})
+			.catch(() => {}) // if you do (x => yourFunc(x)) you can replace it with (yourFunc)
 	}
 
 	/**
@@ -77,7 +77,6 @@ class Today extends Component {
 				.catch(console.error)
 		}, 10000);
 		this.prices.bind('prices', ({prices: {BTC, ETH, LTC}}) => {
-			console.log("pusher: ", BTC.USD, ETH.USD, LTC.USD)
 			this.setState({
 				btcprice: BTC.USD,
 				ethprice: ETH.USD,
@@ -93,7 +92,6 @@ class Today extends Component {
 	render() {
 		// Let's extract everything uptop to keep our render method cleaner ;)
 		const {ethprice, btcprice, ltcprice} = this.state;
-		console.log("render: ", ethprice, btcprice, ltcprice)
 		return (
 			<div className="today--section container">
 				<h2>Current Price</h2>
